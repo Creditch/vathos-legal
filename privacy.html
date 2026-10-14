@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Vathos Bible</title>
+<style>
+:root { color-scheme: light dark; }
+body { font: 18px/1.5 -apple-system, BlinkMacSystemFont, "New York", serif; max-width: 40rem; margin: 2rem auto; padding: 0 1.25rem; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.25rem; margin-top: 2rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+nav a { margin-right: 1rem; }
+ul { padding-left: 1.25rem; }
+code { font-size: 0.92em; }
+footer { margin-top: 3rem; font-size: 0.9rem; opacity: 0.7; }
+</style>
+<nav><a href="index.html">Vathos Bible</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
+<h1>Privacy Policy — Vathos Bible</h1>
+<p><strong>Last updated:</strong> 6 October 2026</p>
+<p><strong>Operator:</strong> Ace Pecyna (Creditch)</p>
+<p><strong>App:</strong> Vathos Bible for iPhone (<code>com.creditch.verbum.ios</code>)</p>
+<p>This policy describes what Vathos Bible actually does. It is not a generic template.</p>
+<h2>Short version</h2>
+<p>Vathos Bible is free. There is no purchase, no in-app purchase, no trial, no ads, no donation or tip prompt, no account to create, and no analytics SDK. (StoreKit code from an earlier paid design remains in the source but is compiled out of the app.)</p>
+<p>Your Bible text lives on the device (bundled public-domain translations, plus optional translations, study corpus, Learn courses, and map packs you download). Four licensed translations (ESV, NIV, NLT, NKJV) are read online from their publishers&#x27; own services; those requests carry the passage or search words, never your personal study data. Notes, highlights, bookmarks, journal entries, reading progress, and settings live on the device. If you are signed into iCloud, that personal study data syncs through <strong>your</strong> iCloud private database (<code>iCloud.com.creditch.verbum</code>). Creditch does not run a server, does not operate an account system, and does not sell data.</p>
+<h2>What we do not do</h2>
+<ul>
+<li>We do not create or require a Vathos account, email login, or profile.</li>
+<li>We do not show ads.</li>
+<li>We do not use a third-party analytics, crash-reporting, or advertising SDK. There is no Firebase, no Mixpanel, no Sentry, no tracking pixel.</li>
+<li>We do not use App Tracking Transparency. The privacy manifest (<code>PrivacyInfo.xcprivacy</code>) declares <code>NSPrivacyTracking</code> false, with no tracking domains. It declares two collected data types, neither linked to you nor used for tracking: the anonymous feedback you choose to send (<code>NSPrivacyCollectedDataTypeCustomerSupport</code>, for support), and API.Bible&#x27;s count of NKJV passages shown (<code>NSPrivacyCollectedDataTypeProductInteraction</code>, analytics for the publisher; see &quot;Networking&quot;).</li>
+<li>We do not sell, rent, or share personal information with data brokers or advertisers.</li>
+<li>We do not send your notes, highlights, bookmarks, journal, reading progress, or any lasting identifier to Bible publishers. Licensed-translation requests carry only what is needed to return the text (see &quot;Networking&quot;).</li>
+</ul>
+<h2>Data the app stores</h2>
+<h3>On this device</h3>
+<ul>
+<li><strong>Scripture and study corpus.</strong> Public-domain Bible translations ship in the app bundle (BSB, KJV, WEB). Additional public-domain translations, an optional <code>study.sqlite</code> (catechisms, public-domain commentaries, confessions, Easton&#x27;s dictionary), and Learn courses can be downloaded on demand and then stay on the device. These are reference files, not your personal data. Licensed translations (ESV, NIV, NLT, NKJV) are never written to disk. Search hits, comparison rows, and the Today preview are dropped when the app goes to the background or quits. The chapter on screen stays in memory until you leave it or the app quits; neighboring chapters kept for paging are dropped on background.</li>
+<li><strong>Your study data</strong> (SwiftData, local): highlights, notes, journal entries, bookmarks, reading spot, recent chapters, reading-plan enrollment and completions, custom plans, Learn progress, and settings (translation choices, typeface, theme, reminder time, and similar preferences).</li>
+<li><strong>Widget snapshot.</strong> On iOS, a short Berean Standard Bible (BSB) verse plus today&#x27;s reading-plan labels, and a separate Learn due-count (language + how many cards are waiting), are written to the App Group <code>group.com.creditch.verbum</code> so home-screen, lock-screen, and Control Center widgets can render without opening the app. Licensed editions are never written there. The Learn payload does not include verse text.</li>
+<li><strong>Local notifications.</strong> If you enable reminders, the app schedules a rolling batch of on-device notifications (<code>UNUserNotificationCenter</code>). Each body carries BSB verse text and a deep link into the app. There is no Apple Push Notification service certificate and no push server. Authorization is requested after a reading session, not on first launch.</li>
+<li><strong>Spotlight.</strong> Notes, journal entries, and bookmarks are indexed on-device via Core Spotlight so you can find <em>your</em> writing from system search. Scripture text from the database is not indexed. Deleting an item removes it from that index.</li>
+<li><strong>Optional Apple Intelligence.</strong> On supported hardware, optional tag suggestions and note summaries use Apple&#x27;s on-device <code>SystemLanguageModel</code>. Input is only user-authored note/journal text and tags — never scripture, Strong&#x27;s, or fetched verse bodies. A summary you keep is stored on that note as a marked artifact, not mixed into the body. Creditch does not receive this content.</li>
+</ul>
+<h3>iCloud (only if you are signed in)</h3>
+<p>If iCloud is available on the device, Vathos Bible uses CloudKit&#x27;s <strong>private</strong> database in the container <code>iCloud.com.creditch.verbum</code>. That database belongs to your Apple ID.</p>
+<p>Synced items include highlights, notes (including optional generated summaries), journal entries, bookmarks, reading spot, recent chapters, settings, reading-plan state, and Learn progress. Sync is automatic when you are signed into iCloud — there is no Vathos account. Translation and course downloads stay on each device.</p>
+<ul>
+<li>Separate Apple IDs each get their own private database. There is no public CloudKit database for user content, and no multi-user sharing.</li>
+<li>If you are not signed into iCloud, or iCloud is restricted, the same data stays on that device only.</li>
+<li>Creditch does not operate a backend that stores these records. Apple holds them under your iCloud account. Turning iCloud off for the app, signing out, or deleting the app follows Apple&#x27;s ordinary iCloud / device-deletion behavior.</li>
+</ul>
+<p>The <code>remote-notification</code> background mode is CloudKit&#x27;s silent push for prompt sync. It is not a marketing push channel.</p>
+<h3>You choose to move data off the device</h3>
+<ul>
+<li><strong>Export annotations</strong> (You → iCloud) writes a Markdown or JSON file of your highlights, notes, journal, and bookmarks to a location you pick (Files, disk, etc.). That export is not uploaded by the app.</li>
+<li><strong>Copy</strong> and <strong>Share</strong> on a selected verse use the system share sheet with the verse text you selected. The destination (Messages, Mail, another app) is your choice; Vathos Bible does not receive a copy.</li>
+<li><strong>Send Feedback</strong> (You → Send Feedback) is anonymous. When you tap Send, the app sends your message, whether it is a bug report or a feature request, the app version, and the iOS version, and nothing else: no name, email address, reply address, device model, identifier, or account. It goes through FormSubmit (formsubmit.co), a mail relay, to the Vathos support inbox (VerbumStudy@icloud.com). FormSubmit, like any web service, sees the network address the request comes from; Vathos does not add it to the message. Nothing is sent unless you tap Send.</li>
+</ul>
+<h2>Networking</h2>
+<p>v1 is designed to read scripture offline. Bundled public-domain translations (BSB, KJV, WEB) are local SQLite, and downloaded packs stay on the device. The licensed translations below, the optional satellite map, and feedback are the only features that need a connection each time you use them.</p>
+<p>Network use in a store build:</p>
+<ul>
+<li><strong>Apple CloudKit</strong> — only when you are signed into iCloud. Syncs personal study data through your private database. There is no Vathos server.</li>
+<li><strong>Content packs (optional)</strong> — On launch the app fetches a public <code>content-manifest.json</code> from the <code>Creditch/verbum-content</code> GitHub Release (HTTPS GET). That request does not include your notes, highlights, or any other personal study data, and it does not block first chapter paint. If you choose to download an additional translation, the optional study corpus, a Learn course, or the optional Atlas detailed-terrain map pack, the app downloads a static <code>.sqlite</code> file from the same Release, verifies its checksum, and keeps it on this device. Pack installs stay device-local and are never synced via CloudKit. Removing a pack deletes the local file.</li>
+<li><strong>Licensed translations (only when you open one)</strong> — ESV, NIV, NLT, and NKJV are read online through each publisher&#x27;s free, non-commercial program:
+<ul>
+<li><strong>ESV</strong> — Crossway&#x27;s ESV API (<code>api.esv.org</code>), for reading and search.</li>
+<li><strong>NLT</strong> — Tyndale&#x27;s NLT API (<code>api.nlt.to</code>), for reading and search.</li>
+<li><strong>NIV</strong> — the YouVersion Platform (<code>api.youversion.com</code>) for reading; NIV search uses API.Bible.</li>
+<li><strong>NKJV</strong> — API.Bible from the American Bible Society (<code>api.scripture.api.bible</code>), for reading and search. When an NKJV passage is shown (or NIV, where this build reads it through API.Bible), the app also tells API.Bible&#x27;s usage service (<code>fums.api.bible</code>) that it was shown, as API.Bible&#x27;s terms require, so the publisher&#x27;s readership can be counted. That report carries the token API.Bible sent with the passage and two random identifiers made fresh each time the app launches; nothing about you, and no identifier that lasts beyond that launch.</li>
+</ul>
+Each HTTPS request sends the passage reference (book and chapter) or, for search, the words you typed, plus Vathos&#x27;s API key for that service. It does not include your notes, highlights, bookmarks, journal, reading progress, or any account or device identifier; there is no account to send. The text is shown for reading, Compare, and search, and is not written to disk (see &quot;On this device&quot;). Word-level study tools (interlinear, word taps, concordance) use the bundled BSB and KJV, not these editions.</li>
+<li><strong>Atlas satellite map (optional)</strong> — Atlas terrain is drawn on the device from bundled or downloaded map tiles. If you switch the basemap to Satellite, Apple MapKit fetches that imagery from Apple.</li>
+<li><strong>Feedback (only when you send it)</strong> — an HTTPS POST of your anonymous message to FormSubmit&#x27;s relay (<code>formsubmit.co</code>), which emails it to the Vathos support inbox. See &quot;You choose to move data off the device&quot;.</li>
+</ul>
+<p>HTTPS is used for any networking. The app declares <code>ITSAppUsesNonExemptEncryption</code> = false (standard HTTPS only; no custom encryption).</p>
+<h2>Permissions and system APIs</h2>
+<ul>
+<li><strong>Notifications</strong> — optional local reminders; see above.</li>
+<li><strong>iCloud / CloudKit</strong> — optional private sync; see above.</li>
+<li><strong>App Group</strong> — widget snapshot only.</li>
+<li><strong>UserDefaults</strong> — settings and widget snapshot. The privacy manifest reports UserDefaults access reasons <code>CA92.1</code> (same app) and <code>1C8F.1</code> (app group).</li>
+<li>The app does not request access to your camera, microphone, photo library, contacts, location, or health data.</li>
+</ul>
+<h2>Children</h2>
+<p>Vathos Bible is a Bible reading and study app, not a social network and not directed at children as a data-collection product. We do not knowingly collect personal information from children. There is no account to create. Anyone who uses the app on a device signed into iCloud is subject to Apple&#x27;s iCloud terms.</p>
+<h2>Third parties</h2>
+<ul>
+<li><strong>Apple.</strong> iCloud/CloudKit, Spotlight, WidgetKit, User Notifications, MapKit satellite imagery (if you choose it in Atlas), and (if you use it) Apple Intelligence are Apple services. Their handling of that data is governed by Apple&#x27;s privacy policy and your Apple ID / iCloud settings.</li>
+<li><strong>GitHub.</strong> Public content-pack files and the content manifest are hosted on GitHub Releases (<code>Creditch/verbum-content</code>). A download request includes ordinary HTTPS metadata (IP address, user-agent). Creditch does not receive that traffic. GitHub&#x27;s handling of it is governed by GitHub&#x27;s terms. No personal study data is sent.</li>
+<li><strong>Bible publishers.</strong> When you open a licensed translation, the request goes to that publisher&#x27;s service: Crossway (ESV API), Tyndale House Publishers (NLT API), YouVersion / Life.Church (YouVersion Platform, NIV), and the American Bible Society (API.Bible, NKJV and NIV search, and its usage report at <code>fums.api.bible</code>). Like any web request, it includes ordinary HTTPS metadata (IP address, user-agent). Each provider&#x27;s own terms and privacy policy govern what it does with those requests. Creditch does not receive that traffic.</li>
+<li><strong>FormSubmit.</strong> Feedback you choose to send passes through FormSubmit (<code>formsubmit.co</code>) on its way to the support inbox, and FormSubmit&#x27;s terms and privacy policy apply to it.</li>
+<li><strong>No other third-party SDKs</strong> ship in this build for analytics, ads, or crash reporting.</li>
+</ul>
+<p>Share-sheet destinations and files you export are not &quot;our&quot; third parties; you choose them.</p>
+<h2>Retention and deletion</h2>
+<p>On-device data remains until you delete it in the app or delete the app. iCloud private-database records remain until you delete them, disable iCloud for the app, or Apple deletes them under your iCloud account settings. Spotlight entries are removed when the corresponding note or bookmark is deleted. Pending local notifications are removed if you turn reminders off. Widget snapshot data is in the App Group container and goes away with the app. Feedback you send arrives as an email in the Vathos support inbox and is kept there; because it carries no name, email, or identifier, we can only find a particular message if you tell us what it said.</p>
+<p>To stop iCloud sync: sign out of iCloud, or disable iCloud for Vathos Bible, in system Settings. Creditch cannot reach into your private database to delete it on your behalf the way a typical &quot;delete my account&quot; email would, because there is no Vathos account.</p>
+<h2>Sale of data</h2>
+<p>We do not sell personal information. We do not share it for cross-app tracking or advertising.</p>
+<h2>Changes</h2>
+<p>If the app starts collecting something this policy does not describe (for example, any analytics), this policy will be updated before that ships, and the App Store privacy nutrition labels will be updated to match.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: verbumstudy@icloud.com</p>
+<p>Operator: Ace Pecyna (Creditch)</p>
+<p>This policy does not create an account relationship. It describes a free, offline-first Bible app that optionally uses your iCloud account for private sync.</p>
+<footer>© 2026 Ace Pecyna · <a href="support.html">Support</a></footer>
+</html>
