@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found — Vathos Bible</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Gentium+Book+Plus:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Gentium+Book+Plus:wght@400&display=swap"></noscript>
+<style>
+/* Layout: a single reading column like a page of the app, with the interlinear line as the one wide object. */
+:root {
+  --canvas: #fbf5ee;      /* Fox bgCanvas */
+  --raised: #ffffff;      /* Fox bgRaised */
+  --ink: #241c17;         /* textPrimary */
+  --ink-2: #615145;       /* textSecondary */
+  --ink-3: #72655b;       /* textTertiary */
+  --rule: rgba(120, 90, 60, 0.18);
+  --accent: #bf4813;      /* Fox accent */
+  --on-accent: #ffffff;
+  --display: "Newsreader", "New York", "Iowan Old Style", Georgia, serif;
+  --body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --greek: "Gentium Book Plus", "New York", Georgia, serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --canvas: #14100e; --raised: #1e1815; --ink: #f3eae0; --ink-2: #bca898; --ink-3: #9a897c;
+    --rule: rgba(243, 234, 224, 0.14); --accent: #ff8a4c; --on-accent: #14100e; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --canvas: #14100e; --raised: #1e1815; --ink: #f3eae0; --ink-2: #bca898; --ink-3: #9a897c;
+  --rule: rgba(243, 234, 224, 0.14); --accent: #ff8a4c; --on-accent: #14100e; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--canvas); color: var(--ink);
+  font: 17px/1.55 var(--body); -webkit-font-smoothing: antialiased;
+}
+.page { max-width: 46rem; margin: 0 auto; padding-inline: 20px; padding-block: 28px 56px; display: grid; gap: 64px; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 15px; }
+nav .mark { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 600; }
+nav .mark img { width: 28px; height: 28px; border-radius: 7px; }
+nav .links { display: flex; gap: 18px; }
+nav .links a { color: var(--ink-2); text-decoration: none; }
+nav .links a:hover { color: var(--accent); }
+
+.hero { display: grid; gap: 22px; }
+.hero img.icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 10px 30px rgba(60, 35, 15, 0.18); }
+h1 { font: 500 clamp(2.4rem, 7vw, 3.6rem)/1.04 var(--display); letter-spacing: -0.015em; margin: 0; text-wrap: balance; }
+h1 em { font-style: italic; color: var(--accent); }
+.lede { font-size: 19px; color: var(--ink-2); margin: 0; max-width: 36rem; }
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+.badge { display: inline-flex; align-items: center; gap: 10px; padding: 11px 18px; border-radius: 12px;
+  background: var(--ink); color: var(--canvas); font-weight: 600; font-size: 15px; text-decoration: none; }
+.badge small { display: block; font-weight: 500; font-size: 11px; letter-spacing: 0.04em; opacity: 0.75; }
+.facts { font-size: 14px; color: var(--ink-3); }
+
+footer { border-top: 1px solid var(--rule); padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; font-size: 14px; color: var(--ink-3); }
+footer nav { display: flex; gap: 18px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav aria-label="Site">
+    <a class="mark" href="/"><img src="/app-icon.png" width="28" height="28" alt="">Vathos Bible</a>
+    <div class="links"><a href="/support.html">Support</a><a href="/privacy.html">Privacy</a></div>
+  </nav>
+
+  <header class="hero">
+    <h1>This page <em>isn’t here</em>.</h1>
+    <p class="lede">The link may be old or mistyped. Everything else is where it was.</p>
+    <div class="cta">
+      <a class="badge" href="/">Back to Vathos Bible</a>
+      <span class="facts"><a href="/support.html">Support</a> · <a href="/privacy.html">Privacy Policy</a></span>
+    </div>
+  </header>
+
+  <footer>
+    <span>© 2026 Ace Pecyna · Vathos Bible</span>
+    <nav aria-label="Legal"><a href="/support.html">Support</a><a href="/privacy.html">Privacy Policy</a></nav>
+  </footer>
+</div>
+</body>
+</html>
